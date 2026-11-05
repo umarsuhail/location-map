@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "location-map-chat",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "durable_objects": {
+    "bindings": [{ "name": "CHAT_HUB", "class_name": "ChatHub" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ChatHub"] }],
+  "observability": { "enabled": true }
+}
