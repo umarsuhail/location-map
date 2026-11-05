@@ -1,0 +1,15 @@
+{
+  // shared/ is compiled by both the app (Metro) and the server (vitest/wrangler).
+  // Without its own config, tools resolve the app's root tsconfig, whose
+  // "extends": "expo/tsconfig.base" only exists where the app's packages are
+  // installed, which the server's CI job never does.
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": ["*.ts"]
+}
